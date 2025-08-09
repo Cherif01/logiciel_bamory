@@ -1,0 +1,217 @@
+.header {
+  background: linear-gradient(
+    135deg,
+    #293289,
+    #293389b5
+  ); /* Couleur de fond de la navbar */
+  // padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .header-search {
+    font-size: 16px;
+    color: #fff;
+    flex-grow: 1;
+    padding-left: 15px;
+
+    .search-icon {
+      color: #fff;
+    }
+
+    .search-input {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      padding: 5px;
+      width: 100%;
+      margin-top: 5px;
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+
+    .h4 {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+
+    .mat-raised-button {
+      border-radius: 20px;
+      padding: 8px 15px;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      position: relative; /* Important to position child elements */
+      background-color: transparent; /* Fond transparent pour correspondre à la couleur du navbar */
+      border: 2px solid transparent;
+      transition: background-color 0.3s, border-color 0.3s; /* Transition pour un joli hover */
+
+      &.notification-btn,
+      &.message-btn {
+        font-size: 16px;
+        min-width: 40px;
+        justify-content: space-between;
+      }
+
+      .badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: #f44336;
+        color: #fff;
+        font-size: 12px;
+        padding: 3px 6px;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        background-color: #ffffff1a; /* Change la couleur du bouton sur hover */
+        border-color: #ffffff; /* Bordure qui apparaît sur hover */
+      }
+    }
+
+    /* Notifications Dropdown */
+    .notifications-dropdown {
+      position: absolute;
+      top: 50px; /* Ajuster la position */
+      right: 0;
+      background-color: #fff;
+      width: 300px;
+      max-height: 300px; /* Limite la hauteur du dropdown */
+      border-radius: 5px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1000; /* S'assurer que la dropdown est au-dessus des autres éléments */
+      overflow-y: auto; /* Permet le défilement vertical si le contenu est trop long */
+    }
+
+    .notification-item {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .notification-content {
+        flex-grow: 1;
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+
+    /* Show notifications when hovering over the button */
+    .notification-btn:hover + .notifications-dropdown,
+    .notifications-dropdown:hover {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .user-info-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .avatar-container {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .avatar {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .dropdown {
+        .dropdown-toggle {
+          display: flex;
+          align-items: center;
+        }
+
+        .user-name {
+          font-size: 14px;
+          color: #fff;
+          margin-left: 8px;
+        }
+
+        .dropdown-menu {
+          background: #fff;
+          border-radius: 4px;
+          min-width: 200px;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          transition: opacity 0.3s ease;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .dropdown-menu.show {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+
+        .dropdown-item {
+          padding: 10px;
+          font-size: 14px;
+          color: #333;
+          display: flex;
+          align-items: center;
+
+          &:hover {
+            background-color: #f1f1f1;
+          }
+
+          .dw-user1 {
+            margin-right: 10px;
+          }
+
+          &.text-danger {
+            color: #e74c3c;
+          }
+        }
+      }
+
+      &:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    }
+  }
+}

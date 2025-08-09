@@ -1,0 +1,132 @@
+<div class="left-side-bar">
+  <div class="brand-logo">
+    <div class="profile-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpCKq1XnPYYDaUIlwlsvmLPZ-9-rdK28RToA&s"
+        class="w-100" alt="Profil utilisateur" class="profile-image" />
+      <div class="profile-info">
+        <h4 class="text-uppercase">
+          <strong>{{ InfoUser.nom }} {{ InfoUser.prenom }}</strong>
+        </h4>
+        <h2 class="text-capitalize text-warning">
+          {{ InfoUser.entite }}
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-block customscroll">
+    <div class="sidebar-menus">
+      <ul id="accordion-menu" class="mt-3">
+        <h4 class="desc_btn rounded-0 text-start ps-1 mb-2 w-100">Dashboard</h4>
+        <li>
+          <a routerLink="apps/dashboard" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">dashboard</mat-icon>
+            <span class="mtext">Tableau de bord</span>
+          </a>
+        </li>
+        <!-- Operations -->
+        <h4 class="desc_btn rounded-0 text-start ps-1 mb-2 w-100">
+          Op&#233;rations
+        </h4>
+        <li>
+          <a routerLink="apps/achat" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">shopping_cart</mat-icon>
+            <span class="mtext">Achat</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="apps/fixing" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">visibility</mat-icon>
+            <span class="mtext">Fixing</span>
+          </a>
+        </li>
+
+        <!-- Mes contacts -->
+        <h4 class="desc_btn rounded-0 text-start ps-1 mb-2 w-100">
+          Mes contacts
+        </h4>
+        <li>
+          <a routerLink="apps/client" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">person</mat-icon>
+            <span class="mtext">Clients</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="apps/fournisseur" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">person</mat-icon>
+            <span class="mtext">Fournisseurs</span>
+          </a>
+        </li>
+
+        <!-- Exp&#233;ditions -->
+        <h4 class="desc_btn rounded-0 text-start ps-1 mb-2 w-100">
+          Exp&#233;ditions
+        </h4>
+        <li>
+          <a routerLink="apps/nouvelle-expedition" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">add</mat-icon>
+            <span class="mtext">Nouvelle expedition</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="apps/historique-expedition" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">history</mat-icon>
+            <span class="mtext">Historique</span>
+          </a>
+        </li>
+
+        <!-- Monetaire -->
+        <h4 class="desc_btn rounded-0 text-start ps-1 mb-2 w-100">
+          Mon&#233;taire
+        </h4>
+        <li>
+          <a routerLink="apps/operation-monetaire" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">add_circle</mat-icon>
+            <span class="mtext">Nouvelle Op&#233;ration</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="apps/compte-monetaire" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">account_balance_wallet</mat-icon>
+            <span class="mtext">Gestion des comptes</span>
+          </a>
+        </li>
+
+        <!-- COMPTABILITÉ (Non accessible aux employés) -->
+        <h4 class="desc_btn rounded-0 text-start ps-1 mb-2 w-100">
+          Comptabilité
+        </h4>
+        <li>
+          <a routerLink="apps/caisse-principale" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">account_balance</mat-icon>
+            <span class="mtext">Caisse</span>
+          </a>
+        </li>
+        <!-- PARAMÈTRES (Non accessible aux employés) -->
+        <h4 class="desc_btn rounded-0 text-start ps-1 mb-2 w-100">
+          Paramètres
+        </h4>
+        <li>
+          <a routerLink="apps/users" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">group</mat-icon>
+            <span class="mtext">Utilisateurs</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="apps/affectation" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">settings_accessibility</mat-icon>
+            <span class="mtext">Affectation</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="apps/settings" routerLinkActive="active-sidebar" class="dropdown-toggle no-arrow">
+            <mat-icon class="micon">settings</mat-icon>
+            <span class="mtext">Param&#232;tre</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="p-5"></div>
+  </div>
+</div>
+<div class="mobile-menu-overlay"></div>

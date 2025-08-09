@@ -1,0 +1,44 @@
+<div class="header">
+  <div class="header-left d-flex align-items-center">
+    <div class="menu-icon dw dw-menu text-light mx-3"></div>
+    <button mat-stroked-button color="DEFAULT" class="text-light border-0" (click)="Location.back()">
+      <mat-icon>reply</mat-icon>
+    </button>
+    <div class="header-search d-none d-lg-block col-12">
+      <div class="h4 text-light">
+        <span style="color: #beeb29">{{
+          'admin'
+          }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-right d-flex align-items-center justify-content-end">
+
+    <!-- User Info Dropdown -->
+    <div class="user-info-dropdown d-flex align-items-center">
+      <!-- Profile Avatar -->
+      <div class="avatar-container">
+        <img class="avatar" src="admin/logo/logo.jpeg" alt="Profile Avatar" />
+      </div>
+      <div class="dropdown">
+        <a class="dropdown-toggle d-none d-lg-block" role="button" data-toggle="dropdown">
+          <div class="user-name">
+            <span class="text-uppercase text-capitalize" style="color: #000000">
+              <strong class="text-white">{{ 'Role' }}</strong>
+            </span>
+          </div>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list text-light">
+          <button class="dropdown-item" routerLink="/parametre/profile">
+            <mat-icon class="mx-3">person</mat-icon> Profile
+          </button>
+          <button class="dropdown-item text-danger fw-bold" (click)="logout()">
+            <mat-icon class="mx-3">settings</mat-icon> Deconnexion
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

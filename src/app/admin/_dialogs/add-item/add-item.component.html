@@ -1,0 +1,28 @@
+<h2 mat-dialog-title class="bg-dark text-light text-center fw-bold">AJOUTER LES BARRES</h2>
+<!-- Contenu -->
+<mat-dialog-content [formGroup]="addItemForm">
+  <h2 class="text-dark">Ajouter les lignes</h2>
+  <hr>
+
+  <form [formGroup]="addItemForm">
+    <div class="" formArrayName="items">
+      <div class="d-flex justify-content-between" *ngFor="let item of items.controls; let i = index" [formGroupName]="i"
+        style="margin-bottom: 5px;">
+        <mat-form-field appearance="outline" class="me-4">
+          <mat-label for="">Poids {{i + 1}} </mat-label>
+          <input type="number" formControlName="poids" matInput placeholder="Ex : 22.00" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="ml-4">
+          <mat-label for="">Carrat {{i + 1}} | <span class="text-danger">19 - 24</span> </mat-label>
+          <input type="number" formControlName="carrat" matInput placeholder="Ex : 22.00" />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="p-4 bg-light" style="border-top: 4px solid midnightblue;">
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="addItemForm.invalid">
+    Valider les 100 entr&#233;es
+  </button>
+</mat-dialog-actions>

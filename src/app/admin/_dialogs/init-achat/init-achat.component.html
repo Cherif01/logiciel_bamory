@@ -1,0 +1,13 @@
+<h2 mat-dialog-title class="bg-warning text-dark fw-bold">Commencer par choisir le compte</h2>
+<mat-dialog-content [formGroup]="formAchat">
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Choisis le fournisseur</mat-label>
+    <mat-select formControlName="id_fournisseur">
+      <mat-option>-- Aucune selection --</mat-option>
+      <mat-option *ngFor="let data of List" [value]="data.id">{{ data.prenom+' '+data.nom }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-flat-button color="primary" class="w-100" (click)="submit()" [disabled]="formAchat.invalid">
+    Valider
+  </button>
+</mat-dialog-content>
