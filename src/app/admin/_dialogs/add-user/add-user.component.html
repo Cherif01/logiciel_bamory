@@ -1,0 +1,38 @@
+<h2 mat-dialog-title class="bg-primary text-white fw-bold">
+  Ajouter un utilisateur
+</h2>
+
+<mat-dialog-content [formGroup]="formAddUser" class="pt-3">
+
+  <!-- Firstname -->
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="firstname" placeholder="Entrez le prénom" />
+  </mat-form-field>
+
+  <!-- Lastname -->
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="lastname" placeholder="Entrez le nom" />
+  </mat-form-field>
+
+  <!-- Telephone -->
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Téléphone</mat-label>
+    <input matInput formControlName="telephone" placeholder="+223 70 00 00 00" />
+  </mat-form-field>
+
+  <!-- Email -->
+  <mat-form-field class="w-100" appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" placeholder="exemple@mail.com" />
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button mat-dialog-close>Annuler</button>
+  <button mat-flat-button color="primary" (click)="submit()" [disabled]="formAddUser.invalid">
+    Valider
+  </button>
+</mat-dialog-actions>

@@ -7,6 +7,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DefaultDeleteComponent } from '../../../shared/default-delete/default-delete.component';
 import { PublicServiceService } from '../../../shared/services/public/public-service.service';
+import { convertObjectInFormData } from '../../../app.component';
+import { InitFxingComponent } from '../../_dialogs/init-fixing/init-fixing.component';
 
 @Component({
   selector: 'app-fixing',
@@ -63,6 +65,28 @@ export class FixingComponent {
         // alert(JSON.stringify(err)); // temporairement, pour tester
       },
     });
+  }
+
+  dialogInitFixing() {
+      this.dialog
+        .open(InitFxingComponent, {
+          width: '450px',
+        })
+        .afterClosed()
+        .subscribe((data: any) => {
+          // console.log(data);
+          this.service
+            .create('initFixing', 'create.php', convertObjectInFormData(data))
+            .subscribe({
+              next: (response: any) => {
+                // console.log(response);
+                this.getFournisseur();
+              },
+              error: (err: any) => {
+                console.log('REPONSE ERROR : ', err);
+              },
+            });
+        });
   }
 
   deleteFunction(id: any, table: string) {

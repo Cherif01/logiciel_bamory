@@ -1,1 +1,93 @@
-<p>compte-utilisateur works!</p>
+<div class="container-fluid p-4">
+ <!-- Header avec titre et bouton -->
+  <div class="card g-4">
+    <div class="row">
+      <div class="col text-start">
+        <h4 class="text-uppercase fw-bold">{{ title }}</h4>
+      </div>
+      <div class="col text-right">
+        <button mat-raised-button color="primary" (click)="dialogAddUser()">
+          <mat-icon>add_circle</mat-icon>
+          Ajouter Utilisateur
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <!-- User Card 1 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <mat-card class="user-card mat-elevation-z3">
+        <mat-card-header>
+          <div mat-card-avatar class="avatar bg-success">PD</div>
+          <mat-card-title>Pathé Diallo</mat-card-title>
+          <mat-card-subtitle>Admin</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-muted">
+            pathe&#64;company.com • +224 620000000
+          </p>
+          <mat-chip-set>
+            <mat-chip color="primary" selected>Active</mat-chip>
+            <mat-chip color="accent" selected>Guinea</mat-chip>
+            <mat-chip color="warn" selected>Since 2023</mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-flat-button color="primary">Email</button>
+          <button mat-stroked-button color="primary">Message</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- User Card 2 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <mat-card class="user-card mat-elevation-z3">
+        <mat-card-header>
+          <div mat-card-avatar class="avatar bg-warning text-dark">AS</div>
+          <mat-card-title>Aïcha Soumah</mat-card-title>
+          <mat-card-subtitle>Manager</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-muted">
+            aicha&#64;company.com • +224 621112233
+          </p>
+          <mat-chip-set>
+            <mat-chip color="primary" selected>Away</mat-chip>
+            <mat-chip color="accent" selected>Conakry</mat-chip>
+            <mat-chip color="warn" selected>Since 2024</mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-flat-button color="primary">Email</button>
+          <button mat-stroked-button color="primary">Message</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- User Card 3 -->
+    <div class="col-12 col-md-6 col-lg-4">
+      <mat-card class="user-card mat-elevation-z3">
+        <mat-card-header>
+          <div mat-card-avatar class="avatar bg-danger">MT</div>
+          <mat-card-title>Mamadou Touré</mat-card-title>
+          <mat-card-subtitle>Staff</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-muted">
+            mamadou&#64;company.com • +224 622445566
+          </p>
+          <mat-chip-set>
+            <mat-chip color="primary" selected>Inactive</mat-chip>
+            <mat-chip color="accent" selected>Remote</mat-chip>
+            <mat-chip color="warn" selected>Since 2022</mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-flat-button color="primary">Email</button>
+          <button mat-stroked-button color="primary">Message</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
